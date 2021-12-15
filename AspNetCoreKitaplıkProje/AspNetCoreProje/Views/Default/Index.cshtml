@@ -1,0 +1,35 @@
+﻿
+
+@model List<AspNetCoreProje.Models.Kitaplar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered">
+
+    <tr>
+         <th>ID</th>
+         <th>KİTAP ADI</th>
+         <th>KİTAP YAZARI</th>
+
+    </tr>
+
+    @foreach(var k in Model)
+    {
+       <tr>
+           <td>@k.ID</td>
+           <td>@k.KitapAd</td>
+           <td>@k.Yazar</td>
+       </tr>
+    }
+
+</table>
+ <h2>Gelecek Kitaplar</h2>
+
+@await Component.InvokeAsync("YeniKitaplar")  <!--VİEWCOMPONENT KULLANIMI-->
+
+<br />
+   @Html.Partial("_PartialPage")

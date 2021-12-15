@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<AspNetCoreProje.Models.Kitaplar>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>KİTAP YAZARI</th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.KitapAd</td>
+            <td>@k.Yazar</td>
+        </tr>
+    }
+</table>
